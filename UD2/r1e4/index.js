@@ -129,3 +129,4 @@ function contarPalabras(s) {
 }
 
 console.log(contarPalabras("   hola       que tal amigo    hola    quetal"));
+
