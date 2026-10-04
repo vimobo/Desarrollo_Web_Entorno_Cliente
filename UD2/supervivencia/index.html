@@ -11,53 +11,39 @@
 <body>
     <div class="bloque">
 
-        <h1>🌲 Supervivencia</h1>
+        <h1>Supervivencia</h1>
 
         <div>
-            <p>❤️ Vida: <span id="vida">100</span></p>
-            <p>🍖 Comida: <span id="comida">50</span></p>
-            <p>💧 Agua: <span id="agua">50</span></p>
-            <p>🪙 Dinero: <span id="dinero">10</span></p>
-            <p>⭐ Puntos: <span id="puntos">0</span></p>
-            <p>📅 Día: <span id="dia">1</span></p>
-            <p>⏱️ Tiempo: <span id="tiempo">60</span></p>
+            <p>❤️ Vida: <span id="vida"></span></p>
+            <p>🍖 Comida: <span id="comida"></span></p>
+            <p>⭐ Puntos: <span id="puntos"></span></p>
+            <p>⏱️ Tiempo: <span id="tiempo"></span></p>
+        </div>
+
+        
+        <div id="divEvento">
+            <p id="descripcionEvento">Pulsa el boton para empezar a jugar</p>
+            <img src="" alt="">
         </div>
 
 
         <div>
-            <button onclick="explorar()">🌲 Explorar</button>
-            <button onclick="comer()">🍖 Comer</button>
-            <button onclick="curarse()">🧪 Curarse</button>
+            <button onclick="explorar()"> Explorar</button>
+            <button onclick="comer()">Comer</button>
+            <button onclick="curarse()">Poción</button>
+            <button onclick="empezar()"> Empezar a jugar</button>
         </div>
 
-        <h2>🎒 Inventario</h2>
         <div>
 
-            <p>🍖 Comida: <span id="inventarioComida">2</span></p>
-            <p>💧 Agua: <span id="inventarioAgua">2</span></p>
-            <p>🧪 Pociones: <span id="pociones">1</span></p>
+            <p>🍖 Comida: <span id="inventarioComida"></span></p>
+            <p>🧪 Pociones: <span id="pociones"></span></p>
 
         </div>
-        <div>
 
-            <h2>📜 Registro</h2>
-
-            <div id="resultado"></div>
-
-            <h2>🏆 Récord</h2>
-
-            <p id="record">0</p>
-        </div>
-    </div>
-    <div class="bloque">
-        <h1 id="evento">Evento</h1>
-        <div>
-            <p id="descripcionEvento"></p>
-
-        </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
