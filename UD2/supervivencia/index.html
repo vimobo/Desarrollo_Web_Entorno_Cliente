@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Juego de Supervivencia</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="bloque">
+
+        <h1>🌲 Supervivencia</h1>
+
+        <div>
+            <p>❤️ Vida: <span id="vida">100</span></p>
+            <p>🍖 Comida: <span id="comida">50</span></p>
+            <p>💧 Agua: <span id="agua">50</span></p>
+            <p>🪙 Dinero: <span id="dinero">10</span></p>
+            <p>⭐ Puntos: <span id="puntos">0</span></p>
+            <p>📅 Día: <span id="dia">1</span></p>
+            <p>⏱️ Tiempo: <span id="tiempo">60</span></p>
+        </div>
+
+
+        <div>
+            <button onclick="explorar()">🌲 Explorar</button>
+            <button onclick="comer()">🍖 Comer</button>
+            <button onclick="curarse()">🧪 Curarse</button>
+        </div>
+
+        <h2>🎒 Inventario</h2>
+        <div>
+
+            <p>🍖 Comida: <span id="inventarioComida">2</span></p>
+            <p>💧 Agua: <span id="inventarioAgua">2</span></p>
+            <p>🧪 Pociones: <span id="pociones">1</span></p>
+
+        </div>
+        <div>
+
+            <h2>📜 Registro</h2>
+
+            <div id="resultado"></div>
+
+            <h2>🏆 Récord</h2>
+
+            <p id="record">0</p>
+        </div>
+    </div>
+    <div class="bloque">
+        <h1 id="evento">Evento</h1>
+        <div>
+            <p id="descripcionEvento"></p>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
