@@ -61,7 +61,10 @@ function explorar() {
 
         actualizarEstado();
         actualizarEventoInfo();
+        actualizarVisualesEfecto();
+
     }
+
 }
 
 function comer() {
@@ -135,7 +138,7 @@ function actualizarEventoInfo() {
 
         info = "Has ganado. Puntuacion final: " + jugador.puntos;
     }
-        
+     
     document.getElementById("descripcionEvento").textContent = info;
 }
 
@@ -150,7 +153,7 @@ function actualizarEstado() {
 }
 
 function actualizarVisualesEfecto() {
-
+    document.getElementById("imagenEfecto").innerHTML = "<img src='./img/" + eventoActual + ".png' alt=''></img>";
 }
 
 //se ejecuta cada segundo. Inspirado en un sistema de ticks
@@ -173,6 +176,8 @@ function empezar () {
     jugador.vida = 100;
     jugador.comida = 50;
     jugador.puntos = 0;
+    jugador.inventario.nComida = 0;
+    jugador.inventario.nPociones = 0;
     contadorTiempo = 60;
     actualizarEstado();
     intervaloEfectosPorSegundo = setInterval(efectosPorSegundo, 1000); 
