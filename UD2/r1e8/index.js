@@ -63,18 +63,31 @@ calcularDistancia();
 
 //trazar una ruta en un mapa
 
-let ubicacionArray = [L.latLng(39.5696, 2.6502),
-                    L.latLng(41.3874, 2.1686),
-                    L.latLng(42.5696, 2.6502),
-                    L.latLng(45.3874, 2.1686)];
+let ubicacionArray = [L.latLng(39.5696, 2.6502)];
 
+
+//declaramos el objeto mapa
 var map = L.map('map').setView(ubicacionArray[0], 13);
 
+
+//inicializamos
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
 
 
-var polyline = L.polyline(ubicacionArray, {color: 'red'}).addTo(map);
+//declaracion poliline
+var polyline = L.polyline(ubicacionArray, { color: 'red' }).addTo(map);
+
+navigator.geolocation.watchPosition((pos) => {
+    ubicacionArray.push(L.latLng(pos.coords.latitude, pos.coords.longitude));
+    
+    //se usa map. para usar el mapa sin declararlo de nuevo
+    map.setView(L.latLng(pos.coords.latitude, pos.coords.longitude), 12);
+    
+    //Se ejecuta la polilinea cada vez que hay un punto nuevo
+    polyline.setLatLngs(ubicacionArray);
+});
+
 
 calcularDistancia()

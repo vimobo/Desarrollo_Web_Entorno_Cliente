@@ -9,4 +9,6 @@ function actualizar() {
 
 
 setInterval(actualizar, 1000);
-document.getElementById("fecha").textContent =  fecha.getDate() + " / " + (fecha.getMonth() + 1) + " / " + fecha.getFullYear();
+document.getElementById("fecha").innerHTML =  fecha.getDate() + " / " + (fecha.getMonth() + 1) + " / " + fecha.getFullYear();
+
+//document.getElementById("fechaCompleta").textContent = fecha.toDateString();
