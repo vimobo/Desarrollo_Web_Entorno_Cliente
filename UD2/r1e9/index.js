@@ -24,6 +24,8 @@ function borrarNombre() {
     document.cookie = "nombre =a; expires =" + new Date(Date.now() - 1 * 10000 * 60 * 60 * 24 * 365);
 }
 
+
+//te pide el nombre si la cookie esta vacía
 var valorCookieNombre = getCookie("nombre");
 if (!valorCookieNombre) {
     let nombre = prompt("Introduce tu nombre");
@@ -33,3 +35,15 @@ else {
     document.getElementById("nombre").innerHTML = `Tu nombre es ${valorCookieNombre}`;
 }
 
+//
+function cambiarARojo() {
+
+    document.cookie = "color =red";
+}
+
+function cambiarAVerde() {
+
+    document.cookie = "color =green";
+}
+
+    document.body.style.backgroundColor = getCookie("color");
