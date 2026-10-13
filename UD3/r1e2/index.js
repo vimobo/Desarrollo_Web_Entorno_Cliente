@@ -124,6 +124,7 @@ array2d = [[1,2],[3,4]];
 array2d = array2d.flat();
 
 console.log(array2d);
+
 /*
 const personas = [
   { nombre: "Ana", edad: 23 },
