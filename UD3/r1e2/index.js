@@ -123,7 +123,7 @@ array2d = [[1,2],[3,4]];
 
 array2d = array2d.flat();
 
-console.log(array2d);
+//console.log(array2d);
 
 /*
 const personas = [
@@ -155,3 +155,30 @@ Usar encadenado de métodos: Dado un array de números, debes calcular la suma d
  */
 
 
+
+const usuarios = [
+  { nombre: "Ana", edad: 25 },
+  { nombre: "Luis", edad: 30 },
+  { nombre: "Marta", edad: 20 }
+];
+
+console.log(usuarios.map(user => user.nombre ));
+
+
+const nombresUsuarios = ["Ana", "Luis", "Marta"];
+const edadUsuarios = [20,21,26];
+
+
+let arrayFusion = [];
+nombresUsuarios.map((nombre, i) => arrayFusion.push({nombre:nombre ,edad:edadUsuarios[i]}));
+arrayFusion.sort((a, b) => a.edad -  b.edad);
+
+arrayFusion.map(user => console.log("user"  + user.nombre + " edad " + user.edad));
+let repeated = [1, 1, 2, 2, 3, 4, 5, 6, 7];
+let set = [...new Set(repeated)];
+console.log(set);
+
+
+let x = repeated.filter(n => n % 2 == 0).map(n => n = n * n).reduce((acc, n) => acc + n);
+
+console.log(x);
