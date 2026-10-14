@@ -151,7 +151,7 @@ Extraer elementos únicos y ordenarlos de menor a mayor.
 
 Usar encadenado de métodos: Dado un array de números, debes calcular la suma de los cuadrados de los números pares.
     Métodos: map(), filter(), reduce() en cadena
-
+        
  */
 
 
