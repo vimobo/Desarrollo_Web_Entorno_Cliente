@@ -112,26 +112,79 @@ function findTreasuere(map) {
     let nextColumn = 0;
     let nextRow = 0;
     let found = false;
-    console.log("Seraching in [" + nextRow + "][" + nextColumn + "] value: " + map[row][column] + " result: ");
+    console.log("Seraching in [" + nextRow + "][" + nextColumn + "] value: " + map[column][row]);
 
     do {
-        nextRow = (map[column][row] % 10) - 1;
-        nextColumn = (intDev(map[column][row], 10)) - 1;
-        if (column == nextColumn && nextRow == row) {
+        nextColumn = (map[column][row] % 10) - 1;
+        nextRow = (intDev(map[column][row], 10)) - 1;
+        if (map[row][column] == map[nextRow][nextColumn]) {
             found = true;
-            console.log("The treasure is in [" + nextRow + "][" + nextColumn + "] -> " + map[nextRow - 1][nextColumn - 1]);
+            console.log("The treasure is in [" + (nextRow + 1) + "][" + (nextColumn + 1) + "] -> " + map[nextRow][nextColumn]);
         }
         else
-            console.log("Seraching in [" + nextRow + "][" + nextColumn + "] value: " + map[row][column] + " result: " + map[nextRow][nextColumn]);
+            console.log("Seraching in [" + (row + 1) + "][" + (column + 1) + "] value: " + map[row][column] + " next step: " + map[nextRow][nextColumn]);
         column = nextColumn;
         row = nextRow;
     } while (!found);
 }
 
+function findTreasuereAlternative(map) {
+    solution = "";
+    let value = 0;
+    for (row = 0; row < map.length; row++) {
+        for (col = 0; col < map[row].length; col++) {
+            value = map[row][col];
+            if (value == map[(intDev(value, 10) - 1)][((value % 10) - 1)])
+                solution = "Treasure found in " + (intDev(value, 10) - 1) + " " + ((value % 10) - 1) + " -> " + map[(intDev(value, 10) - 1)][(value % 10) - 1];
+        }
+    }
+    return solution;
+}
+
 findTreasuere(map);
+console.log(findTreasuereAlternative(map));
+
 //    Develop a function wich be able to create a random treasure hunt like the previous one. As arguments it will recibe the dimensions of the array (at least 5x5) and must return a valid treasure hunt array.
 //
 
+function createTreasureMap(size) {
+    let treasureMap = new Array(size);
+
+    for (let i = 0; i < size; i++) {
+        treasureMap[i] = new Array(size).fill(0);
+    }
+    let counter = 1;
+    let randomRow = Math.floor((Math.random() * size));
+    let randomCol = Math.floor((Math.random() * size));
+    let newRandomRow = 0;
+    let newRandomCol = 0;
+    let found = false;
+    treasureMap[randomRow][randomCol] = (randomRow + 1) * 10 + (randomCol + 1);
+    console.log(treasureMap[randomRow][randomCol]);
+
+    do {
+        do {
+            found = false;
+            newRandomRow = Math.floor((Math.random() * size));
+            newRandomCol = Math.floor((Math.random() * size));
+
+            if (treasureMap[newRandomRow][newRandomCol] == 0) {
+                treasureMap[newRandomRow][newRandomCol] = (randomRow + 1) * 10 + (randomCol + 1);
+                found = true;
+                counter++;
+
+            }
+
+        } while (!found && counter < size * size);
+
+        randomRow = newRandomRow;
+        randomCol = newRandomCol;
+    } while (counter < size * size);
+    console.log(treasureMap);
+    return treasureMap;
+}
+createTreasureMap(3);
+//findTreasuere(createTreasureMap(3));
 
 
 //    Write a program to search for the "saddle points" in a 5 by 5 array of integers. A saddle point is a cell whose value is greater than or equal to any in its row, and less than or equal to any in its column. There may be more than one saddle point in the array. Print out the coordinates of any saddle points your program finds. Print out "No saddle points" if there are none.
