@@ -31,7 +31,7 @@ document.getElementById("informacionScreen").innerHTML = `
         <ul>
             <li>Resolución: ${screen.width} x ${screen.height}</li>
             <li>Área disponible: ${screen.availWidth} x ${screen.availHeight}</li>
-            <li>Orie: ${screen.colorDepth}</li>
+            <li>Orie: ${screen.orientation}</li>
             <li>Color depth: ${screen.colorDepth}</li>
             <li>Pixel depth: ${screen.pixelDepth}</li>
         </ul>`;

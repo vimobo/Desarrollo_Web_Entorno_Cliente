@@ -30,4 +30,4 @@ function doE14 (length) {
 //doE2(10.5);
 //doE3([1,2,3,4]);
 //doE5();
-console.log(doE14(10));
+//console.log(doE14(10));
