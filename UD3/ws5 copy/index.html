@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicios OOP</title>
+    <link rel="stylesheet" href="./style.css">
+    <title>Lagarto Spock</title>
 </head>
+
 <body>
-    <div id="juego">
-    </div>
-    <div>
-        <select name="tipo" id="tipoSelect">
-            <option value="piedra">Piedra</option>
-            <option value="papel">Papel</option>
-            <option value="tijera">Tijera</option>
-            <option value="lagarto">Lagarto</option>
-            <option value="spock">Spock</option>
-        </select>
-        <button id="jugar">Jugar</button>
+
+    <video autoplay muted loop id="myVideo">
+        <source src="./src/img/1s6mwxA.mp4" type="video/mp4">
+    </video>
+    <div id="gameContainer">
+
+
+        <div id="gameSelection">
+            <button id="jugar">Jugar</button>
+            <select name="tipo" id="tipoSelect">
+                <option value="piedra">Piedra</option>
+                <option value="papel">Papel</option>
+                <option value="tijera">Tijera</option>
+                <option value="lagarto">Lagarto</option>
+                <option value="spock">Spock</option>
+            </select>
+        </div>
+        <div id="juego">
+            <p>Elige tu jugada</p>
+        </div>
     </div>
     <script src="./index.js"></script>
 </body>
+
 </html>
