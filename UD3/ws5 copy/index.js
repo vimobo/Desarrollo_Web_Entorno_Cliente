@@ -1,36 +1,95 @@
-class Tipo {
+//TIPO : TIPOS A LOS QUE GANA
+const tiposList = {
+    piedra: ["tijera", "lagarto"],
+    papel: ["piedra", "spock"],
+    tijera: ["papel", "lagarto"],
+    lagarto: ["spock", "papel"],
+    spock: ["tijera", "piedra"]
+};
+
+
+//CLASE JUGADOR: Un jugador puede ser la máquina
+
+class Jugador {
     #tipo;
-    #tiposEnemigos = [];
+    #tipoQueGana;
 
-    constructor(tipo, tiposEnemigos) {
-        this.#tipo = tipo;
+    constructor(tipo = this.setRandomTipo()) {
+        this.setTipo(tipo);
         //tipos a los que gana
-        this.#tiposEnemigos = tiposEnemigos;
     }
 
-    pelear (tipoEnemigo){
-        let pelea = "";
-        if(this.#tiposEnemigos[0] == tipoEnemigo || this.#tiposEnemigos[1] == tipoEnemigo)
-            pelea = "Juegas " + this.#tipo + " y ganas a " + tipoEnemigo;   
-        else 
-            pelea = "Juegas " + this.#tipo + " y pierdes contra " + tipoEnemigo
+    //GETTERS Y SETTERS
 
-        return pelea;
+    getTipo() {
+        return this.#tipo;
     }
 
-    jugar () {
-        enemigo = tipos[Math.floor(Math.random() * 4)];
-        console.log(this.pelear(enemigo));
+    setTipo(tipo) {
+        this.#tipo = tipo;
+        this.#tipoQueGana = tiposList[tipo];
     }
+
+    getTipoQueGana(n) {
+        return this.#tipoQueGana[n];
+    }
+
+    setRandomTipo() {
+        let allTipos = ["piedra", "papel", "tijera", "lagarto", "spock"];
+        let tipo = allTipos[Math.floor(Math.random() * allTipos.length)];
+        this.#tipoQueGana = tiposList[tipo];
+        this.#tipo = tipo;
+    }
+
+    //LOGICA DEL JUEGO
+
+    luchar(jugador) {
+        let jugada = "";
+        let tipoEnemigo = jugador.getTipo();
+        let tipoQueGanaEnemigo1 = jugador.getTipoQueGana(0);
+        let tipoQueGanaEnemigo2 = jugador.getTipoQueGana(1);
+
+        if (this.#tipo == tipoQueGanaEnemigo1 || this.#tipo == tipoQueGanaEnemigo2)
+            jugada = `Juegas ${this.#tipo}, pierdes contra ${tipoEnemigo}`;
+
+        else if (this.#tipoQueGana[0] == tipoEnemigo || this.#tipoQueGana[1] == tipoEnemigo)
+            jugada = `Juegas ${this.#tipo}, ganas a ${tipoEnemigo}`;
+
+        else
+            jugada = `Juegas ${this.#tipo} contra ${tipoEnemigo}. No pasa nada...`;
+
+        return jugada;
+    }
+
+
+
+
+}
+
+function empezarPartida(){
+    document.getElementById("jugar").addEventListener("click", () => jugar(jugador1, jugador2));
+}
+
+//GAME LOOP
+
+function jugar(jugador1, jugador2) {
+    let tipoEntry = document.getElementById("tipoSelect").value;
+
+    jugador1.setTipo(tipoEntry);
+    jugador2.setRandomTipo();
+
+    document.getElementById("juego").innerHTML = "<p>" + jugador1.luchar(jugador2) + "<p>";
 }
 
 
 
-const tipos =  [
-    "PIEDRA",
-    "PAPEL",
-    "PAPEL",
-    "PAPEL",
-    "PAPEL"];
+//console.log(tiposList.piedra[0]);
 
-console.log();
+var jugador1 = new Jugador("piedra");
+var jugador2 = new Jugador();
+jugador2.setRandomTipo()
+console.log(jugador2);
+
+
+
+empezarPartida();
