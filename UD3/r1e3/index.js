@@ -103,7 +103,7 @@ let map = [
 console.log();
 
 function intDev(n1, n2) {
-    return (n1 - (n1 % n2)) / n2;
+    return  (n1 - (n1 % n2)) / n2;
 }
 
 function findTreasuere(map) {
@@ -184,6 +184,8 @@ function createTreasureMap(size) {
     return treasureMap;
 }
 createTreasureMap(3);
+
+
 //findTreasuere(createTreasureMap(3));
 
 
