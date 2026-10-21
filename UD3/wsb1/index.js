@@ -34,7 +34,6 @@ function acertar() {
     }
         else
         alert("Has Perdido!!");
-
 }
 
 

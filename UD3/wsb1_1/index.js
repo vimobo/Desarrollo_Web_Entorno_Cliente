@@ -1,0 +1,25 @@
+let colores = {
+    azul: "rgb(0, 0, 255)",
+    verde: "rgb(0, 128, 0)",
+    negro: "rgb(0, 0, 0)",
+    rojo: "rgb(255, 0, 0)"
+};
+
+let keys = Object.keys(colores);
+let randomN = Math.floor(Math.random() * 4);
+console.log(keys);
+let colorACazar = keys[randomN];
+
+document.getElementById("presentador").textContent = "Busca el color " + colorACazar;
+
+let container = document.getElementById("container");
+
+container.addEventListener("click", comprobarColor)
+
+function comprobarColor(event) {
+    let hijoClicado = event.target;
+    if(colores[keys[randomN]] == getComputedStyle(hijoClicado).backgroundColor)
+        alert("muu bien");
+    else
+        alert("muu mal");
+}
