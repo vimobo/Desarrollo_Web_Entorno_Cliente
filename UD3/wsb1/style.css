@@ -13,8 +13,29 @@ body {
     border-radius: 1000000px;
     width: 500px;
     height: 500px;
+    margin: 2em;
 }
 
-button {
-    margin-bottom: 4em;
+#empezar {
+    margin: 1em;
+}
+
+#game5btn {
+    margin-bottom: em;
+    color: gold;
+    background-color: black;
+    background-color: ;
+}
+
+.games {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-width: 90vw;
+    border: 1px solid black;
+    margin: 1em;
+    background-color: rgba(226, 221, 231, 0.288);
+    border-radius: 20px;
 }

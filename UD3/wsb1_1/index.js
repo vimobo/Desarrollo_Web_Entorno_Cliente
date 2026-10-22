@@ -23,3 +23,23 @@ function comprobarColor(event) {
     else
         alert("muu mal");
 }
+
+
+let btn1 = document.getElementById("botonCambio");
+
+btn1.addEventListener("mouseover", () => {
+    btn1.style.backgroundColor="red";
+})
+
+btn1.addEventListener("mouseout", () => {
+    btn1.style.backgroundColor="white";
+})
+
+addEventListener("keydown", (event) => {
+    if(event.key == 'a')
+        alert("Muy bien sabes que letra es la A");
+    else
+        alert("Muy mal no sabes que letra es la A");
+
+})
+

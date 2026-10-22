@@ -1,0 +1,32 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background:linear-gradient(black, rgb(0, 0, 0));
+    background-repeat:;
+    bac;
+}
+
+
+h1{
+    margin-bottom: 3em;
+    color: rgba(240, 248, 255, 0.575);
+    font-family: 'Archivo';
+    text-shadow: 2px 2px black;
+}
+
+#colorContainers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    width: 50vw;
+    height: 60vh;
+    
+}
+
+#colorContainers div {
+    border-radius: 20px;
+}
