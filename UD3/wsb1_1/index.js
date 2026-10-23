@@ -6,11 +6,16 @@ let colores = {
 };
 
 let keys = Object.keys(colores);
-let randomN = Math.floor(Math.random() * 4);
+let randomN = 0;
 console.log(keys);
-let colorACazar = keys[randomN];
+let colorACazar = "";
 
-document.getElementById("presentador").textContent = "Busca el color " + colorACazar;
+
+function generateRandomColor() {
+    randomN = Math.floor(Math.random() * 4);
+    colorACazar = keys[randomN];
+    document.getElementById("presentador").textContent = "Busca el color " + colorACazar;
+}
 
 let container = document.getElementById("container");
 
@@ -22,6 +27,8 @@ function comprobarColor(event) {
         alert("muu bien");
     else
         alert("muu mal");
+
+    generateRandomColor();
 }
 
 
@@ -35,11 +42,24 @@ btn1.addEventListener("mouseout", () => {
     btn1.style.backgroundColor="white";
 })
 
-addEventListener("keydown", (event) => {
-    if(event.key == 'a')
-        alert("Muy bien sabes que letra es la A");
-    else
-        alert("Muy mal no sabes que letra es la A");
+let randomLetter = "";
 
+function generateRandomLetter() {
+    randomLetter = String.fromCharCode(97 + Math.floor(Math.random()* 25));
+    document.getElementById("teclaAPulsar").textContent = "Presiona la letra " + randomLetter;
+}
+
+
+addEventListener("keydown", (event) => {
+    if(event.key == randomLetter)
+        alert("Muy bien sabes que letra es la " + randomLetter);
+    else 
+        alert("Muy mal no sabes que letra es la " + randomLetter);
+    
+    generateRandomLetter();
+    
 })
+
+generateRandomColor();
+generateRandomLetter();
 

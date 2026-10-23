@@ -24,7 +24,7 @@ function gameLoop() {
             if (visitedCount != visitedBoxes.length) {
                 console.log(visitedBoxes[visitedCount].id);
                 console.log(visitedBoxes[visitedCount] + " hol");
-                parpadear(visitedBoxes[visitedCount]);
+                parpadear(visitedBoxes[visitedCount], 2);
                 visitedCount++
             }
             else {
@@ -35,14 +35,15 @@ function gameLoop() {
         }, 1000)
     }
     else {
-        alert("Has perdido");
+        document.getElementById("title").textContent = "Has Perdido, ya te lo he dicho"
     }
 }
 
 //parpadeo de los boxes
 
-function parpadear(currentBox) {
-    let nOfParpadeos = 2;
+function parpadear(currentBox, n) {
+    let nOfParpadeos = n;
+
     const interval = setInterval(() => {
         document.getElementById(currentBox).style.opacity = 0.5;
 
@@ -57,6 +58,23 @@ function parpadear(currentBox) {
     }, 400)
 
 }
+
+function parpadearShort(currentBox) {
+
+    document.getElementById(currentBox).style.opacity = 0.5;
+    let color = document.getElementById(currentBox).style.backgroundColor;
+    document.getElementById(currentBox).style.backgroundColor = "white";
+
+    setTimeout(() => {
+        document.getElementById(currentBox).style.opacity = 1;
+        document.getElementById(currentBox).style.backgroundColor = color;
+
+    }, 50);
+
+
+}
+
+
 gameLoop();
 
 //logica del jugador
@@ -66,16 +84,20 @@ document.getElementById("colorContainers").addEventListener("click", (event) => 
 
     if (!active) {
 
+        if (vivo) {
+            parpadearShort(clickedChild.id);
+        }
+
         if (clickedChild.id == visitedBoxes[recuentoDeAciertos]) {
             recuentoDeAciertos++;
             if (recuentoDeAciertos == visitedBoxes.length && vivo) {
                 gameLoop();
-                alert("te adentras al nivel " + (visitedBoxes.length));
+                document.getElementById("title").textContent = "te adentras al nivel " + (visitedBoxes.length);
                 recuentoDeAciertos = 0;
             }
         }
         else {
-            alert("Has perdido");
+            document.getElementById("title").textContent = "Has Perdido"
             vivo = false;
             visitedBoxes = [];
 
