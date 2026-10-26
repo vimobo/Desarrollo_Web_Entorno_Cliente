@@ -5,8 +5,7 @@ body {
     align-items: center;
     flex-direction: column;
     background:linear-gradient(black, rgb(0, 0, 0));
-    background-repeat:;
-    bac;
+
 }
 
 
@@ -14,8 +13,11 @@ h1{
     margin-bottom: 3em;
     color: rgba(240, 248, 255, 0.575);
     font-family: 'Archivo';
-    text-shadow: 2px 2px black;
+    text-shadow: 2px 2px rgb(162, 0, 255);
+    background-color: rgb(red green blue / alpha);
+    background-color: rgb(243, 9, 9)
 }
+
 
 #colorContainers {
     display: grid;

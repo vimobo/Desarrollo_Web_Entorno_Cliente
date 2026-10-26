@@ -1,0 +1,23 @@
+body {
+    background-color: rgb(0, 234, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+    width: 100vw;
+    height: 100vh;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+}
+
+#styleTitle::before{
+    content:  "Blue theme";
+}
