@@ -1,0 +1,20 @@
+body{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+table {
+    width: 20vw;
+    height: 20vw;
+    background-color: black;
+}
+
+td {
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    background-color: aqua;
+}
