@@ -1,0 +1,12 @@
+body{
+    width: 100vw;
+    height: 100vh;
+}
+div {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    width: 2em;
+    height: 1em;
+    background-color: red;
+}

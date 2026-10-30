@@ -1,0 +1,25 @@
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+#img {
+    touch-action: none;
+    scale: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20vw;
+    height: 20vw;
+    border-radius: 0px;
+    background-color: red;
+      translate: -50% -50%;
+}
+
+#info {
+    left: 50%;
+    width: 20vw;
+    height: 20vw;
+    background-color: black;
+    color: wheat;
+}
