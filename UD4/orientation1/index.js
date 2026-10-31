@@ -10,6 +10,7 @@ window.addEventListener("deviceorientation", (event)=> {
 })*/
 
 function rotar(event) {
+        alert("Evento recibido:", event);
     if (event.alpha !== null) {
 
         div.style.rotate = `${-event.alpha}deg`;
