@@ -10,7 +10,7 @@ window.addEventListener("deviceorientation", (event)=> {
 })*/
 
 function rotar(event) {
-    div.style.transform = `rotateY(${- event.alpha}deg)`
+    div.style.rotate = `'${- event.alpha}deg'`;
 }
 
 document.getElementById("permisos").addEventListener("click", () => onClick());
@@ -34,6 +34,7 @@ function onClick() {
 
         // Android y otros navegadores
         window.addEventListener('deviceorientation', rotar);
+        alert("permiso concedido");
 
     }
 }
