@@ -17,6 +17,7 @@ body{
 }
 
 #info {
+    display: none;
     left: 50%;
     width: 20vw;
     height: 20vw;
