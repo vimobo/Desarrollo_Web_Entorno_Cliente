@@ -10,7 +10,11 @@ window.addEventListener("deviceorientation", (event)=> {
 })*/
 
 function rotar(event) {
-    div.style.rotate = `'${- event.alpha}deg'`;
+        if (event.alpha !== null)  {
+
+            div.style.rotate = `'${- event.alpha}deg'`;
+        }
+        document.getElementById("result").textContent = event.alpha;
 }
 
 document.getElementById("permisos").addEventListener("click", () => onClick());
