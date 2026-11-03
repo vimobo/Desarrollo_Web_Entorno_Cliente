@@ -1,0 +1,229 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        120deg,
+        #d66be9,
+        #8652e7,
+        #3049c9
+    );
+
+    padding: 40px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 650px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    background: white;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* LEFT PANEL */
+
+.illustration {
+    position: relative;
+    background-image: url("https://media.istockphoto.com/id/2178094690/vector/launching-a-startup-business.jpg?s=612x612&w=0&k=20&c=bonUTAitTXV8Q3AV_KSgtqty2zENx5DGWWcI3MGCf7E=");
+    background-size: cover;
+    background-position: center;
+
+    min-height: 650px;
+}
+
+.logo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 18px;
+}
+
+.logo small {
+    display: block;
+    font-size: 9px;
+    text-align: right;
+    font-weight: 400;
+}
+
+.illustration-footer {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+
+    color: white;
+    font-size: 11px;
+}
+
+/* RIGHT PANEL */
+
+.form-panel {
+    position: relative;
+    padding: 70px 12%;
+    background: white;
+}
+
+header {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+.menu-button {
+    border: none;
+    background: transparent;
+    color: #e2a04d;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.form-content {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #455b66;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.description {
+    color: #8b969d;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.login {
+    font-size: 12px;
+    color: #89949a;
+    margin-bottom: 25px;
+}
+
+a {
+    color: #159dcc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* FORM */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 18px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.field label {
+    font-size: 12px;
+    color: #65727a;
+}
+
+.field input {
+    width: 100%;
+    height: 42px;
+
+    padding: 0 12px;
+
+    border: 1px solid #e0e3e6;
+    border-radius: 3px;
+
+    outline: none;
+
+    font-family: inherit;
+    font-size: 12px;
+
+    transition: border-color 200ms;
+}
+
+.field input:focus {
+    border-color: #159dcc;
+}
+
+/* CHECKBOXES */
+
+.checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.checkboxes label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    font-size: 11px;
+    color: #89949a;
+}
+
+.checkboxes input {
+    accent-color: #159dcc;
+}
+
+/* BUTTON */
+
+.submit-button {
+    margin-top: 35px;
+
+    background: #159dcc;
+    color: white;
+
+    border: none;
+    border-radius: 3px;
+
+    padding: 13px 25px;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    transition: background 200ms;
+}
+
+.submit-button:hover {
+    background: #087fae;
+}
+
+.bottom-text {
+    margin-top: 25px;
+    font-size: 11px;
+    color: #89949a;
+}
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+
+    font-size: 11px;
+    color: #89949a;
+}
