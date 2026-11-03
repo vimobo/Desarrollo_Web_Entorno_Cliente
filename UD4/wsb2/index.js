@@ -57,27 +57,23 @@ class BookList {
                 "<div class='book'><h2>" + book.getTitle() + "</h2>" +
                 "<p>" + book.getAuthor() + "</p>" +
                 "<p>" + (book.getRead() ? "Read" : "not read") + "</p>" +
-                + (book.getRead() ? "<p>" + book.getReadDate() + "</p>" : "<p></p>");
+                + (book.getReadDate() == NaN ? "<p>" + book.getReadDate() + "</p>" : "<p></p>");
         }
     }
 
     imprimirReadBooks(bool) {
         let div = bool ? "readbooklist" : "notreadbooklist";
-        console.log(div)
         document.getElementById(div).innerHTML = "";
 
         for (const book of this.#allBooks) {
+            
+            if(book.getRead() == bool){
 
-            if(book.getRead == bool){
-
-                console.log(book.getTitle());
-                console.log(book.getRead());
                 console.log(div);
                 document.getElementById(div).innerHTML +=
                 "<div class='book'><h2>" + book.getTitle() + "</h2>" +
                 "<p>" + book.getAuthor() + "</p>" +
-                "<p>" + (book.getRead() ? "Read" : "not read") + "</p>" +
-                (book.getRead() ? "<p>" + book.getReadDate() + "</p>" : "");
+                "<p>" + (book.getRead() ? "Read" : "not read") + "</p>";
             }
         }
     }
@@ -124,12 +120,16 @@ class Book {
 
 
 document.getElementById("submitBook").addEventListener("click", (event) => {
+
+
     let titulo = document.getElementById("titulo").value;
     let autor = document.getElementById("autor").value;
 
+    if(titulo == "" || autor == "") 
+        return;
+
     document.getElementById("titulo").value = "";
     document.getElementById("autor").value = "";
-
 
     bookCount();
 
@@ -150,12 +150,13 @@ function bookCount() {
 let booklist = new BookList();
 
 let b1 = new Book("El Quijote", "Jose Piñero", false);
-let b2 = new Book("El cojone", "Josabi Piñao", true);
+let b2 = new Book("El cojone", "Josabi Piñao", true, new Date());
 
 booklist.addBook(b1);
 booklist.addBook(b2);
 
 bookCount();
+
 booklist.imprimirBooks();
 booklist.imprimirReadBooks(false);
 booklist.imprimirReadBooks(true);
