@@ -1,0 +1,60 @@
+body {
+    font-family: "Barlow Condensed";
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    display: flex;
+    color: #FF5B42;
+    font-size: 2em;
+    background-color: #FFD749;
+}
+
+div {
+    transition: 300ms;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+input {
+    border-radius: 510px;
+    border: none;
+    text-align: center;
+    font-size: inherit;
+    background-color: #FF5B42;
+    height: 4em;
+    width: 60vw;
+}
+
+#button {
+    border-radius: 510px;
+    border: none;
+    text-align: center;
+    font-size: inherit;
+    background-color: #FF5B42;
+    height: 2em;
+    width: 30vw;
+    transition: 200ms;
+}
+
+#button:hover {
+    background-color: #ffedea;
+
+    transform: scale(1.1);
+    transition: 200ms;
+}
+
+
+li{
+    transition: 200ms;
+}
+
+#saludo {
+    display: none;
+    transition: 500ms;
+    opacity: 0;
+}
