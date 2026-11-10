@@ -1,0 +1,45 @@
+body {
+background-color: rgb(255, 187, 0);
+font-family: sans-serif;
+color: white;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 100vw;
+font-size: 1.5em;
+height: 100vh;
+}
+
+
+#leters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 90vw;
+    height: 40vh;
+    background-color: wheat;
+}
+
+button{
+    width: 10vw;
+    height: 5vh;
+    background-color: rgb(255, 187, 0);
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 1em;
+    color: white;
+}
+
+p{
+    font-size: 1.5em;
+}
+
+.letra {
+width: 50px;
+height: 50px;
+background-color: chocolate;
+margin: 10px;
+text-align: center;
+}
