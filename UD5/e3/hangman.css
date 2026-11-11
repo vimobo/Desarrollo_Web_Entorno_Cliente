@@ -19,7 +19,6 @@ height: 100vh;
     flex-direction: row;
     width: 90vw;
     height: 40vh;
-    background-color: wheat;
 }
 
 button{
@@ -33,13 +32,27 @@ button{
 }
 
 p{
+    transition: 200ms;
     font-size: 1.5em;
 }
 
 .letra {
-width: 50px;
-height: 50px;
-background-color: chocolate;
-margin: 10px;
-text-align: center;
+    transition: 500ms;
+    border-radius: 5px;
+    flex: 1;
+    background-color: rgb(255, 102, 0);
+    margin: 10px;
+    text-align: center;
+}
+
+#playAgainDiv {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 40vh;
+    left: 30vw;
+    width: 40vw;
+    height: 20vh;
+
 }

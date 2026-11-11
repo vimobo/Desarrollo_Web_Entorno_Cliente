@@ -6,17 +6,21 @@ function start() {
     interval = setInterval(() => {
 
         let clock = document.getElementById("clock");
-        
+
         milisecondsPassed += 1000;
-        
+
         clock.innerHTML = formatTime(milisecondsPassed);
 
-    }, 1000); 
+    }, 1000);
 }
 
 document.getElementById("startButton").addEventListener("click", () => start());
 
-document.getElementById("resetButton").addEventListener("click", () => milisecondsPassed = 0);
+document.getElementById("resetButton").addEventListener("click", () => {
+
+    milisecondsPassed = 0; 
+    clock.innerHTML = formatTime(milisecondsPassed);
+});
 
 document.getElementById("stopButton").addEventListener("click", () => clearInterval(interval));
 

@@ -1,9 +1,12 @@
+import { cities } from "./cities.js";
+
+
 let end = 'Z'.charCodeAt();
 let start = 'A'.charCodeAt();
 
 let letras = document.getElementById("leters");
 
-let palabra = "BARCELONA";
+let palabra = "";
 let palabraAMostrar = "";
 
 let letrasAdivinadas = "";
@@ -11,38 +14,41 @@ let letrasAdivinadas = "";
 let lives = 10;
 
 
-//imprimir letras
+// funciones
 
-for (i = start; i < end; i++) {
-    const p = document.createElement("p");
-    p.className = "letra";
-    p.innerHTML = String.fromCharCode(i);
-    letras.appendChild(p);
+function gameLogic(target) {
+
+    let result = target.innerHTML;
+
+    if (lives > 1) {
+
+        if (palabra.indexOf(result) != -1) {
+
+            revelarFrase(result);
+            target.style.backgroundColor = "green";
+
+        }
+        else {
+
+            lives--;
+
+            target.style.backgroundColor = "red";
+            document.getElementById("lives").textContent = "You have " + lives + " lives";
+        }
+
+    } else {
+        
+        document.getElementById("lives").textContent = "You lost";
+        letras.textContent = "";
+
+    }
 }
 
-
-letras.addEventListener("click", (e) => {
-
-
-    if (e.target.className == "letra") {
-
-        let result = e.target.innerHTML;
-
-        letrasAdivinadas += result;
-
-        mainLogic(e.target);
-
-        e.target.remove();
-    }
-    if (palabra == palabraAMostrar.replaceAll(" ", "")) {
-        alert("Has ganado!");
-    }
-
-})
-
 function revelarFrase() {
+
     palabraAMostrar = "";
-    for (i = 0; i < palabra.length; i++) {
+
+    for (let i = 0; i < palabra.length; i++) {
         if (letrasAdivinadas.indexOf(palabra.charAt(i)) != -1) {
             palabraAMostrar += palabra.charAt(i) + " ";
         }
@@ -54,22 +60,41 @@ function revelarFrase() {
     document.getElementById("response").textContent = palabraAMostrar;
 }
 
-function mainLogic(target) {
-
-    result = target.innerHTML;
-
-    if (lives > 1) {
-
-        if (palabra.indexOf(result) != -1) {
-            //console.log(result + " aparece")
-            revelarFrase(result);
-        }
-        else {
-            lives--;
-            document.getElementById("lives").textContent = "You have " + lives + " lives";
-        }
-
-    } else {
-        document.getElementById("lives").textContent = "You lost";
-    }
+function setRandomCity() {
+    palabra = cities[Math.floor(Math.random()*cities.length)];
 }
+
+
+//eventos
+
+letras.addEventListener("click", (e) => {
+
+
+    if (e.target.className == "letra" && lives > 0) {
+
+        let result = e.target.innerHTML;
+
+        letrasAdivinadas += result;
+
+        gameLogic(e.target);
+
+    }
+    if (palabra == palabraAMostrar.replaceAll(" ", "")) {
+        alert("Has ganado!");
+    }
+
+})
+
+//empezar juego
+//imprimir letras
+
+for (let i = start; i < end; i++) {
+    const p = document.createElement("p");
+    p.className = "letra";
+    p.innerHTML = String.fromCharCode(i);
+    letras.appendChild(p);
+}
+
+setRandomCity();
+revelarFrase();
+
