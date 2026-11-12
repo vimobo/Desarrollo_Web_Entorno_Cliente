@@ -51,8 +51,7 @@ function printDeck() {
     deck.map((card) => {
         setTimeout(() => {
             board.appendChild(card);
-            timeToApear += 50;
-        },timeToApear)
+        },timeToApear += 100)
     })
 }
 
@@ -92,7 +91,7 @@ board.addEventListener("click", (event) => {
             if (lastCard.id == target.id) {
                 setTimeout(() => {
                     currentCards.map((card) => 
-                        card.remove());
+                    card.classList.add("removed"));
                     currentCards = [];
                     clickCount = 0;
                     actionOn = true;
@@ -101,6 +100,7 @@ board.addEventListener("click", (event) => {
             else {
                 setTimeout(() => {
                     currentCards.map((card) => card.className = "card hidden");
+
                     currentCards = [];
                     lastCard = "";
                     actionOn = true;

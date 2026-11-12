@@ -21,12 +21,15 @@ body {
 }
 
 .card {
-
+    border: 5px solid black;
     border-radius: 10px;
     transform: rotateY(0deg);
     transition: transform 0.5s ease;
     min-width: 20%;
-    flex: 4;
+    box-sizing: border-box;
+    width: calc((100% - 40px) / 5);
+    flex: 0 0 calc((100% - 40px) / 5);
+    border-radius: 10px;
 }
 
 .card.hidden {
@@ -39,3 +42,10 @@ body {
 .card:not(.hidden) {
     transform: rotateY(180deg);
 }
+
+.card.removed {
+
+    opacity: 0;
+}
+
+
