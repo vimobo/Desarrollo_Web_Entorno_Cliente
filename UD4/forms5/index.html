@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -21,11 +20,15 @@
         <div class="inputDiv">
             <label for="cardNumber">Card Number</label>
             <input type="text" id="cardNumber" placeholder="3242 3423 4234 234">
+            <p id="cardNumberShowError" class="error"></p>
+
         </div>
 
         <div class="inputDiv">
             <label for="cardHolder">Card Holder</label>
             <input type="text" id="cardHolder" placeholder="John Doe">
+            <p id="cardNameShowError" class="error"></p>
+
         </div>
 
         <div class="expiration">
@@ -80,6 +83,7 @@
 
                 <p class="cardTitle">Holder</p>
                 <p id="cardHolderShow">Vicen Mobo</p>
+                <p id="cardHolderShowError" class="error"></p>
             </div>
             <div>
                 <p class="cardTitle">Exiry Date</p>
@@ -89,4 +93,5 @@
     </div>
 
 </body>
+
 </html>
