@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colors Maquetation</title>
-    <script defer src="./index.js"></script>
+    <script type="module" defer src="./index.js"></script>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <h1>Welcome to the Cinema</h1>
+    <label for="search">Search for a movie</label>
+    <input type="text" name="search" id="search">
+    <input id="submit" type="submit" name="submit">
     <div id="movies">
     </div>
 
-    <button id="showMore">Show More</button>
+    
+    <div id="moreInfo" style="display: none;">
+        <h4>Title:</h4>
+        <p id="titleMoreInfo"></p>
+        <h4>Year:</h4>
+        <p id="yearMoreInfo"></p>
+        <h4>Rated:</h4>
+        <p id="ratedMoreInfo"></p>
+        <h4>Actors:</h4>
+        <p id="actorsMoreInfo"></p>
+        <h4>Awards:</h4>
+        <p id="AwardsMoreInfo"></p>
+        <h4>Metascore:</h4>
+        <p id="metascoreMoreInfo"></p>
+        <h4>Plot:</h4>
+        <p id="plotMoreInfo"></p>
+        <button id="closeInfo">Close</button>
+    </div>
 </body>
+
 </html>
